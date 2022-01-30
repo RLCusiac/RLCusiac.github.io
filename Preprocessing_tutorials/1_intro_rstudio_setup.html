@@ -43,9 +43,60 @@
 										<li>Learn what to include at the start of a new script</li>
 									</ul>
 
-									<iframe width="700" height="400"
-									src="https://www.youtube.com/embed/tgbNymZ7vqY">
-									</iframe>
+									<p>What is the hardest step in coding? Easy, the first part: Starting.</p>
+
+									<p>Having the courage to start coding is hard enough, but hitting roadblocks at the very beginning, as we often do, makes it even harder. The first part of the tutorial will introduce you to the RStudio layout, highlighting useful functions you can use to help you solve problems down the line. In the second part, I will show you how to setup your first R script.</p>
+
+
+									<h2>Step 1: Install R</h2>
+
+									<p>This tutorial will not go into detail about how to install R and RStudio. Very detailed instructions on how to do that can be found <a href="https://www.datacamp.com/community/tutorials/installing-R-windows-mac-ubuntu">here</a>.</p>
+
+									<h2>Step 2: Understanding the Rstudio layout</h2>
+
+									<p>Since I'm assuming you are opening RStudio for the first time, we will start by creating our first script.</p>
+
+									<h3>Creating a script</h3>
+
+									<span class="image right"><img src="./RA_T1/2-New file menu2.png" alt="" style="max-width: 60%;"/></span>
+
+									<p> Creating a script can be easily done by going to the top left cornor of the screen, and clicking on the white square with a green plus sign. Once you click on that, a menu will appear from which you can pick what type of script you want to create. I suggest selecting the first option "R Script" to start. You can also create a new script by clicking on the File menu>New file>R Script or by clicking <kbd>CTRL+SHIFT+n</kbd>. </p>
+
+									<p>Now that you have RStudio up and ready to go, let's take a look at the layout. You will notice that there are 4 sections in a typical layout: the script, the console, the global environment and the display/resources section.Let's inspect each of these sections a little further.</p>
+
+
+									<span class="image"><img src="./RA_T1/1-RSudio interface2.png" alt="" style="max-width: 90%;"/></span>
+
+									<br>
+
+									<h3>Writing and executing code with the script and console section</h3>
+
+									<p>There are two places in RStudio you can write code: the script and the console. </p>
+
+									<p>The **script** section is used to write out code which you can then run later. You can write multiple lines before deciding to actually run/execute any of them. This is a little bit like a cook book in which you write out all of the steps in a recipe.</p>
+
+									<p>To execute code written in the script, you can either place you cursor on the line you want to execute and press <kbd>CTRL+ENTER</kbd> or click on the Run button at the top right of the Script section. If you want to run mulitple lines, you can highlight the section of code you want to execute and again either press <kbd>CTRL+ENTER</kbd> or click on the Run button. NOTE: In the script section, press ENTER by itself will note execute code.</p>
+
+									Try it for yourself! Type the following code 
+
+									<pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+    print 'Iteration ' + i;
+    deck.shuffle();
+    i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';
+									</code></pre>
+
+									<p>The **console** is used to run/execute code. When writing code in the console, you will often only write one line at a time, and everytime you press ENTER, R will execute the code you have just written.  </p>
+
+									 
+
+
+
+				
 
 									<hr class="major" />
 
