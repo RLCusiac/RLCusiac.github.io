@@ -58,14 +58,14 @@
 
 									<h3>Creating a script</h3>
 
-									<span class="image right"><img src="RA_T1/2-New file menu2.png" alt="" style="max-width: 60%;"/></span>
+									<span class="image right"><img src="RA_T1/2-New_file_menu2.png" alt="" style="max-width: 60%;"/></span>
 
 									<p> Creating a script can be easily done by going to the top left corner of the screen and clicking on the white square with a green plus sign. Once you click on that, a menu will appear from which you can pick what type of script you want to create. I suggest selecting the first option "R Script" to start. You can also create a new script by clicking on the <strong>File menu > New file > R Script</strong> or by clicking <code>CTRL+SHIFT+n</code>. </p>
 
 									<p>Now that you have RStudio up and ready to go, let's take a look at the layout. You will notice that there are 4 sections in a typical layout: the script, the console, the global environment and the display/resources section. Let's inspect each of these sections a little further.</p>
 
 
-									<span class="image"><img src="RA_T1/1-RSudio interface2.png" alt="" style="max-width: 90%;"/></span>
+									<span class="image"><img src="RA_T1/1-RSudio_interface2.png" alt="" style="max-width: 90%;"/></span>
 
 									<p><br></p>
 
@@ -94,13 +94,13 @@ c = 3</code></pre>
 
 									<p>On a side note: Another term for saving your object to the global environment for the first time is to "declare". In other words, to inspect or use an object, you must first "declare" its name and content. </p>
 
-									<span class="image"><img src="RA_T1/Inspecting object in GE.png" alt="" style="max-width: 80%;" /></span>
+									<span class="image"><img src="RA_T1/Inspecting_object_in_GE.png" alt="" style="max-width: 80%;" /></span>
 
-									<span class="image"><img src="RA_T1/Inspecting object in console.png" alt="" /></span>
+									<span class="image"><img src="RA_T1/Inspecting_object_in_console.png" alt="" /></span>
 
 									<p><br>Now objects a, b and c were saved in our global environment when we executed the code above, but what happens when we try to inspect an object that is not in our global environment?</p>
 
-									<span class="image"><img src="RA_T1/Error-Object not found.png" alt="" /></span>
+									<span class="image"><img src="RA_T1/Error-Object_not_found.png" alt="" /></span>
 
 									<p><br>This is possibly one of the most common errors you will encounter, and luckily one of the easiest to solve, with a little bit of practice. Common sources of error include 1- not running the bit of code declaring the object you are trying to use/visualize, or 2- misspelling the name of the object you are trying to use/visualize (ah, the classic typo!). Another common scenario in which you might encounter this type of error is when 1-using functions from specific packages or 2-when importing data from a folder on your computer, which brings us to the last of the four sections...</p>
 
@@ -119,15 +119,15 @@ c = 3</code></pre>
 
 									<p>To install an R package, simply go to Tools>Install packages...<br> A window will pop open where you can type the package you want to install (in this case, type tidyverse). Keep all other defaults options, such as Install dependencies checked, and then click Install. Notice that code for installing a package will appear in the console. </p>
 
-									<span class="image"><img src="RA_T1/5-Install packages menu.png" alt="" style="max-width: 80%;" /></span>
+									<span class="image"><img src="RA_T1/5-Install_packages_menu.png" alt="" style="max-width: 80%;" /></span>
 
-									<span class="image"><img src="RA_T1/Packages window.png" alt="" /></span>
+									<span class="image"><img src="RA_T1/Packages_window.png" alt="" /></span>
 
 									<pre><code>> install.packages("tidyverse")</code></pre>
 
 									<p>The new package should now be installed. To check, you can go to the Packages tab in the Display/resources section, and look through the list of packages. You should find the package you just installed.<br>Now, to actually use a package you must first load it into your working environment. To do this, simply click on the checkbox next to the package name. Notice that code for loading a package will appear in the console. This will be important for when we set up our script.</p>
 
-									<span class="image"><img src="RA_T1/Packages list selected.png" alt="" /></span>
+									<span class="image"><img src="RA_T1/Packages_list_selected.png" alt="" /></span>
 
 									<pre><code>> library(tidyverse)</code></pre>
 
@@ -137,9 +137,9 @@ c = 3</code></pre>
 
 									<p>Besides Google, the help tab in the display/resources section is going to be your go to resource for most questions on how to use functions (or simply help you remember how to use them). This section essentially contains all the documentation related to the functions in R. <br>There are two ways you can access it. First, you can go to the help tab and type the name of the function in the search bar. Second, you can type in the console <code>? Name of function</code>. For example, if you want to use the filter function in R, you could type <code>? filter</code> in the console to access the documentation.</p>
 
-									<span class="image"><img src="RA_T1/6-Help tab2.png" alt="" style="max-width: 80%;"/></span>
+									<span class="image"><img src="RA_T1/6-Help_tab2.png" alt="" style="max-width: 80%;"/></span>
 
-									<span class="image"><img src="RA_T1/7-Help command.png" alt="" style="max-width: 80%;"/></span>
+									<span class="image"><img src="RA_T1/7-Help_command.png" alt="" style="max-width: 80%;"/></span>
 
 									<p>Quick note on how to read documentation:<br>There are three main parts in documentation: 1- What does the function do? 2- What are its arguments? 3- Examples of how to use it. You don't need to understand everything in the documentation to use it (indeed, a lot of people find it overwhelming and confusing). However, you can often get by just by scrolling down to the examples, and then looking up specific arguments that are relevant to you.</p>
 
@@ -152,9 +152,9 @@ c = 3</code></pre>
 
 									<p>To know what your current working directory is, you can go to the Files tab in the Display/resources section, and click on <strong>More > Go to current Working Directory</strong>. To change your working, you can manually change it by selecting <strong>Session > Set working directory > Choose directory...</strong> From there, a file explorer window will open, which will allow you to navigate to the folder you want to set as your working directory. Again, notice the code that appears in the console when setting your new working directory.</p>
 
-									<span class="image"><img src="RA_T1/3-Files menu.png" alt="" style="max-width: 80%;"/></span>
+									<span class="image"><img src="RA_T1/3-Files_menu.png" alt="" style="max-width: 80%;"/></span>
 
-									<span class="image"><img src="RA_T1/8-Set working directory.png" alt="" style="max-width: 80%;"/></span>
+									<span class="image"><img src="RA_T1/8-Set_working_directory.png" alt="" style="max-width: 80%;"/></span>
 
 									<p></p>
 
