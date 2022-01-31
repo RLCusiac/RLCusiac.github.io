@@ -188,7 +188,7 @@ df <- read_csv("data.csv") # Insert the name of the file in the quotes
 									<ul>
 										<li>Only load at the top of your script important packages you will use throughout your script</li>
 										<li>If two packages have conflicting functions, R will use the function from the last package that was loaded. The function from the previous package will be "masked". R will warn you (most of the time) when these conflicts occur.</li>
-										<li>If there is a package you will only use once or twice in your code (and/or you know if conflicts with other packages), you can load that package momentarily for a single line of code using the :: . For example, if you want to use the stats package version of filter() instead of the dplyr package version of filter() (which is the one used by default in tidyverse), you can use <code>stats::</code> at the beginning of your line of code.</li>
+										<li>If there is a package you will only use once or twice in your code (and/or you know if conflicts with other packages), you can load that package momentarily for a single function using the :: symbol. For example, if you want to use the stats package version of filter() instead of the dplyr package version of filter() (which is the one used by default in tidyverse), you can use <code>stats::filter()</code> in your code.</li>
 									</ul>
 
 									<span class="image"><img src="RA_T1/Conflicts2.PNG" alt="" style="max-width: 80%;"/></span>
