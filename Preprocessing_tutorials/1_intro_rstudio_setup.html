@@ -48,7 +48,7 @@
 									<p>Having the courage to start coding is hard enough, but hitting roadblocks at the very beginning, as we often do, makes it even harder. The first part of the tutorial will introduce you to the RStudio layout, highlighting useful functions you can use to help you solve problems down the line. In the second part, I will show you how to setup your first R script.</p>
 
 
-									<h2>Step 1: Install R</h2>
+									<h2>Step 1: Installing R</h2>
 
 									<p>This tutorial will not go into detail about how to install R and RStudio. Very detailed instructions on how to do that can be found <a href="https://www.datacamp.com/community/tutorials/installing-R-windows-mac-ubuntu">here</a>.</p>
 
@@ -60,43 +60,138 @@
 
 									<span class="image right"><img src="./RA_T1/2-New file menu2.png" alt="" style="max-width: 60%;"/></span>
 
-									<p> Creating a script can be easily done by going to the top left cornor of the screen, and clicking on the white square with a green plus sign. Once you click on that, a menu will appear from which you can pick what type of script you want to create. I suggest selecting the first option "R Script" to start. You can also create a new script by clicking on the File menu>New file>R Script or by clicking <kbd>CTRL+SHIFT+n</kbd>. </p>
+									<p> Creating a script can be easily done by going to the top left corner of the screen and clicking on the white square with a green plus sign. Once you click on that, a menu will appear from which you can pick what type of script you want to create. I suggest selecting the first option "R Script" to start. You can also create a new script by clicking on the <strong>File menu > New file > R Script</strong> or by clicking <code>CTRL+SHIFT+n</code>. </p>
 
-									<p>Now that you have RStudio up and ready to go, let's take a look at the layout. You will notice that there are 4 sections in a typical layout: the script, the console, the global environment and the display/resources section.Let's inspect each of these sections a little further.</p>
+									<p>Now that you have RStudio up and ready to go, let's take a look at the layout. You will notice that there are 4 sections in a typical layout: the script, the console, the global environment and the display/resources section. Let's inspect each of these sections a little further.</p>
 
 
 									<span class="image"><img src="./RA_T1/1-RSudio interface2.png" alt="" style="max-width: 90%;"/></span>
 
-									<br>
+									<p><br></p>
 
-									<h3>Writing and executing code with the script and console section</h3>
+									<h3>Writing and Executing Code in the Script and Console</h3>
 
 									<p>There are two places in RStudio you can write code: the script and the console. </p>
 
-									<p>The **script** section is used to write out code which you can then run later. You can write multiple lines before deciding to actually run/execute any of them. This is a little bit like a cook book in which you write out all of the steps in a recipe.</p>
+									<p>The <strong>script</strong> section is used to write out code which you can then run later. You can write multiple lines before deciding to actually run/execute any of them. This is a little bit like a cookbook in which you write out all of the steps in a recipe.</p>
 
-									<p>To execute code written in the script, you can either place you cursor on the line you want to execute and press <kbd>CTRL+ENTER</kbd> or click on the Run button at the top right of the Script section. If you want to run mulitple lines, you can highlight the section of code you want to execute and again either press <kbd>CTRL+ENTER</kbd> or click on the Run button. NOTE: In the script section, press ENTER by itself will note execute code.</p>
+									<p>To execute code written in the script, you can either place your cursor on the line you want to execute and press <code>CTRL+ENTER</code> or click on the Run button at the top right of the Script section. If you want to run multiple lines, you can highlight the section of code you want to execute and again either press <code>CTRL+ENTER</code> or click on the Run button. NOTE: In the script section, press <code>ENTER</code> by itself will note execute the code.</p>
 
-									Try it for yourself! Type the following code 
+									Try it for yourself! Type the following code in your new script. Then try running the first line (a = 1) individually, and second and third line (b = 2 and c = 3) simultaneously.
 
-									<pre><code>i = 0;
+									<pre><code>a = 1
+b = 2
+c = 3</code></pre>
 
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';
-									</code></pre>
-
-									<p>The **console** is used to run/execute code. When writing code in the console, you will often only write one line at a time, and everytime you press ENTER, R will execute the code you have just written.  </p>
-
-									 
+									<p>Notice that each time you run the code, the line(s) you run appear in the console at the bottom. In other words, the <strong>console</strong> is used to run/execute code. If you wanted, you could write code directly into the console, and then press <code>ENTER</code> to execute it. However, doing this will only allow you to write one line at a time before executing and writing the following line. That is why most of your code will be written in your script, and the console will mostly be used for sanity checks, troubleshooting and executing one-time commands.</p>
 
 
+									<h3>Visualizing Objects in the Global Environment</h3>
 
-				
+									<p>You may also have noticed, when running the previous lines of code, that values appeared in the global environment, our next section of interest. Briefly, the global environment is where all of your objects are stored. 
+
+									In essence, objects have 2 parts to them: a name and a content. For example, in our previous code, <code>a</code> is an object that is called "a" (name) and has value of 1 (content). This is a very simple object (i.e., a single value), however we will soon see that you can have more complex objects such as lists, matrices, dataframes, tables, etc. You can inspect the content of an object either by looking at the global environment tab or by writing the name of the object in the console and pressing enter. </p>
+
+									<p>On a side note: Another term for saving your object to the global environment for the first time is to "declare". In other words, to inspect or use an object, you must first "declare" its name and content. </p>
+
+									<span class="image"><img src="./RA_T1/Inspecting object in GE.png" alt="" style="max-width: 80%;" /></span>
+
+									<span class="image"><img src="./RA_T1/Inspecting object in console.png" alt="" /></span>
+
+									<p><br>Now objects a, b and c were saved in our global environment when we executed the code above, but what happens when we try to inspect an object that is not in our global environment?</p>
+
+									<span class="image"><img src="./RA_T1/Error-Object not found.png" alt="" /></span>
+
+									<p><br>This is possibly one of the most common errors you will encounter, and luckily one of the easiest to solve, with a little bit of practice. Common sources of error include 1- not running the bit of code declaring the object you are trying to use/visualize, or 2- misspelling the name of the object you are trying to use/visualize (ah, the classic typo!). Another common scenario in which you might encounter this type of error is when 1-using functions from specific packages or 2-when importing data from a folder on your computer, which brings us to the last of the four sections...</p>
+
+									<h3>Installing packages, setting working directories and other fun stuff</h3>
+
+									<p>The last section we will cover is the resource/display section. Now, there isn't actually a good name for this section, it's basically full of very useful tabs. In this tutorial, we will focus on the Packages, Help and Files tabs. We will also slowly start setting up our R script.</p>
+
+									<h4>Packages</h4>
+
+									<p>R comes prepackaged with basic functions which allow you to accomplish various tasks. For example, if you wanted to add a set of numbers (e.g., 1, 2, and 3), you can use the function <code>sum()</code> to find the sum. Try the following code in the console.</p>
+
+									<pre><code>> sum(1,2,3)
+[1] 6</code></pre>
+
+									<br>However, you can also download additional packages with more complex functions. These packages can have various purposes such doing statistical tests that are not part of base R (e.g., structural equation modeling) or just cleaning data in an efficient way. For the present moment we will work focus on the latter case, and install our first R package: tidyverse. We will cover in following tutorials how useful this package can be for preprocessing data.</p>
+
+									<p>To install an R package, simply go to Tools>Install packages...<br> A window will pop open where you can type the package you want to install (in this case, type tidyverse). Keep all other defaults options, such as Install dependencies checked, and then click Install. Notice that code for installing a package will appear in the console. </p>
+
+									<span class="image"><img src="./RA_T1/5-Install packages menu.png" alt="" style="max-width: 80%;" /></span>
+
+									<span class="image"><img src="./RA_T1/Packages window.png" alt="" /></span>
+
+									<pre><code>> install.packages("tidyverse")</code></pre>
+
+									<p>The new package should now be installed. To check, you can go to the Packages tab in the Display/resources section, and look through the list of packages. You should find the package you just installed.<br>Now, to actually use a package you must first load it into your working environment. To do this, simply click on the checkbox next to the package name. Notice that code for loading a package will appear in the console. This will be important for when we set up our script.</p>
+
+									<span class="image"><img src="./RA_T1/Packages list selected.png" alt="" /></span>
+
+									<pre><code>> library(tidyverse)</code></pre>
+
+									<p>Congratulations! You have installed and loaded your first package. You now have access to tons of new and exciting functions! Just one question though...how do you know how to use them?</p>
+
+									<h4>Help</h4>
+
+									<p>Besides Google, the help tab in the display/resources section is going to be your go to resource for most questions on how to use functions (or simply help you remember how to use them). This section essentially contains all the documentation related to the functions in R. <br>There are two ways you can access it. First, you can go to the help tab and type the name of the function in the search bar. Second, you can type in the console <code>? Name of function</code>. For example, if you want to use the filter function in R, you could type <code>? filter</code> in the console to access the documentation.</p>
+
+									<span class="image"><img src="./RA_T1/6-Help tab2.png" alt="" style="max-width: 80%;"/></span>
+
+									<span class="image"><img src="./RA_T1/7-Help command.png" alt="" style="max-width: 80%;"/></span>
+
+									<p>Quick note on how to read documentation:<br>There are three main parts in documentation: 1- What does the function do? 2- What are its arguments? 3- Examples of how to use it. You don't need to understand everything in the documentation to use it (indeed, a lot of people find it overwhelming and confusing). However, you can often get by just by scrolling down to the examples, and then looking up specific arguments that are relevant to you.</p>
+
+									<p> Now that you have some fancy packages and have a way of knowing how to use them, you are ready to start analyzing data, right?<br>Well...almost.</p>
+
+
+									<h4>Files</h4>
+
+									<p>The data you want to analyze will probably come from an external source, like a csv or an excel file. However, before you can load these data into R, you must first set the correct working directory. The working directory is the folder in which the computer will look for documents and save documents by default.</p>
+
+									<p>To know what your current working directory is, you can go to the Files tab in the Display/resources section, and click on <strong>More > Go to current Working Directory</strong>. To change your working, you can manually change it by selecting <strong>Session > Set working directory > Choose directory...</strong> From there, a file explorer window will open, which will allow you to navigate to the folder you want to set as your working directory. Again, notice the code that appears in the console when setting your new working directory.</p>
+
+									<span class="image"><img src="./RA_T1/3-Files menu.png" alt="" style="max-width: 80%;"/></span>
+
+									<span class="image"><img src="./RA_T1/8-Set working directory.png" alt="" style="max-width: 80%;"/></span>
+
+									<p></p>
+
+									<h2>Step 3: Setting up your script</h2>
+
+									<p>So far, this tutorial has covered how to create a new script, run code, install packages, and set the working directory. Furthermore, we learned how to do these things using a click based method (i.e., clicking buttons). In this last part, we will bring everything together to set up your first analysis script using code.</p>
+
+									<p>One problem with using the click based method is that you have to repeat this setup every time you open up R. However, to make your code reproducible and not have to click a million places, you can include a few code snippets at the beginning of your script which can set up all of these things for you.</p>
+
+									<ol>
+										<li>Give your script a title along with a short description of what it is designed to do. We call this commenting. You can do this by adding a # symbol at the beginning of the line.</li>
+										<li>Load the load relevant libraries using the <code>library()</code> function. Note that I added the code allowing you to install the package. This is not necessary per se, but some people like having this line when they send their code to other people might not have the necessary packages to run the code. If you choose to include this, it is preferable to "comment it out" by adding the # symbol at the beginning of the line.</li>
+										<li>Set your working directory using the <code>setwd()</code> function. If you want to check that the code worked properly, you can use the <code>getwd()</code> function in the console.</li>
+										<li>Optional (topic of next tutorial): You can try loading a csv file by using the read_csv() function</li>
+									</ol>
+
+									<pre><code># Preprocessing and analysis for implicit memory project
+# Install and load packages
+# install.packages("tidyverse")
+library(tidyverse) # Insert package name in parenthese
+
+# Set working directory
+setwd("D:/Memory_project") # Insert file path in the quotes
+
+#Optional
+df <- read_csv("data.csv") # Insert the name of the file in the quotes
+</code></pre>
+
+									<p>A few last key notes on packages:<br>Some packages are composed of multiple subpackages. Additionally, multiple packages can use the same name for different functions. As a general rule, things can go sideways when using the same name to refer to different things. Here are some tips on how to you can reduce potential package problems:</p>
+
+									<ul>
+										<li>Only load at the top of your script important packages you will use throughout your script</li>
+										<li>If two packages have conflicting functions, R will use the function from the last package that was loaded. The function from the previous package will be "masked". R will warn you (most of the time) when these conflicts occur.</li>
+										<li>If there is a package you will only use once or twice in your code (and/or you know if conflicts with other packages), you can load that package momentarily for a single line of code using the :: . For example, if you want to use the stats package version of filter() instead of the dplyr package version of filter() (which is the one used by default in tidyverse), you can use <code>stats::</code> at the beginning of your line of code.</li>
+									</ul>
+
+									<span class="image"><img src="./RA_T1/Conflicts2.png" alt="" style="max-width: 80%;"/></span>
 
 									<hr class="major" />
 
@@ -123,16 +218,15 @@ print 'It took ' + i + ' iterations to sort the deck.';
 									</header>
 									<ul>
 										<li><a href="../index.html">About me</a></li>
-										<li><a href="../projects.html">Projects</a></li>
 										<li><a href="../publications.html">Publications</a></li>
 										<li><a href="../experience.html">Experience</a></li>
 										<li><a href="../other_interests.html">Other interests</a></li>
 										<li><span class="opener">Tutorials</span>
 											<ul>
-												<li><a href="../ExpDesign_tutorials.html">Programming experiments</a></li>
+												<!--li><a href="ExpDesign_tutorials.html">Programming experiments</a></li-->
 												<li><a href="../Preprocessing_tutorials.html">Preprocessing data</a></li>
 												<!--li><a href="#">Statistics</a></li-->
-												<!--li><a href="#">Research and writing</a></li-->
+												<li><a href="../Research_blog.html">Research and writing</a></li>
 											</ul>
 										</li>
 									</ul>
