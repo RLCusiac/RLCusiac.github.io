@@ -44,14 +44,50 @@
 
 									<p>So you've finished setting up your script and you ready to start analyzing. Thing is, you need to import your data before you can do anything with it. This tutorial will cover two of the most common file importation scenarios: 1- importing one mutlisubject data file with one subject per line (i.e., Qualtrics data), 2- importing multiple single subject data files. Although most examples will be with csv files, resources for handling other types of files (e.g., excel, e-prime) will be provided at the bottom.</p>
 
-									<!-- Image of the two data structures-->
+									<h3>Long vs wide data structure</h3>
+									
+									<p>Before we start importing data, let's first take a look at two types of data structures you may encounter: wide format and long format. <br> <br> <strong>Wide format:</strong> Data is in a wide format when each participant is a row, and each observation(i.e., question or trial) is column. You will most likely encounter this format when using survey tools like Qualtrics or Google forms. In general, importing the type of data requires a single step because participants are already all in one data sheet.</p> 
+									
+									<span class="image"><img src="RA_T2/Wide_qualtrics.PNG" alt="" style="max-width: 80%;"/></span>
 
-									<!--span class="image"><img src="RA_T1/2-New_file_menu2.PNG" alt="" style="max-width: 60%;"/></span-->
+									<p><strong>Long format:</strong> Data is in a long format when observations for each participant are distributed over multiple rows. You will most likely encounter this format when collecting behavioural data with mulitple trials per participants using software like MATLAB, E-prime, and Psychopy. In general, importing (as well as cleaning) this type of data requires a few extra steps. Typically, these steps include importing participants' individual data and then combining everything into one dataframe.</p>
+
+									<span class="image"><img src="RA_T2/Long_multisubject.PNG" alt="" style="max-width: 100%;"/></span>
 
 									<h2>Importing your first data file</h2>
 
-									Let's start with the most common scenario. You've just run a study on Qualtrics
+									<p>Let's start with the easiest/most common scenario. You've just run a study on Qualtrics, and you wish to import the data into R. All you need, really, is the function <code>read_csv()</code> to import any csv file. Let's add this line to the script we set up in the previous tutorial.</p>
 
+									<pre><code># Preprocessing and analysis for implicit memory project
+
+# Install and load packages
+# install.packages("tidyverse")
+library(tidyverse) # Insert package name in parentheses or quotes
+
+# Set working directory
+setwd("D:/Memory_project") # Insert file path in the quotes
+
+#Import data
+raw_df <- read_csv("data.csv") # Insert the name of the file in the quotes
+</code></pre>
+									
+									<p>Let's examine this last line more closely. Notice that there are three parts: <code>raw_df</code> + <code><-</code> + <code>read_csv("data.csv")</code>. </p>
+
+									<p>When run this line, notice that two things will happen. First, we have an output in the console.</p>
+
+									<!-- Image of console output-->
+
+									<p> Second, the new object name (raw_df) appeared in our global environment. </p>
+
+									<!-- Image of global enviroment + View when double clicking-->
+
+									<h3>Common errors</h3>
+
+									<p>At this stage, there are two common errors new R users run into. The first is [insert error message]. This can happen when you haven't loaded the tidyverse package. In the event that you have loaded the package currently and the read_csv function still doesn't work, you can try <code>read.csv()</code>. Although read_csv() is better in general, read.csv() is a good back up if all else fails.</p>
+
+									<p>The second common error is [insert error message]. In this error message, R is telling you that it can't find the file your asking it to import. Often, the reason it can't find the file is because it is either looking for the wrong file (i.e., there is a typo in the file name) or in the wrong place (i.e., the working directory hasn't been set up properly). <br> <br> To correct this, first make sure that the file name is correctly typed. This means the filename matches exactly the file name in the folder (letter case also matches) and that you include the correct extension (e.g., .csv). <br> <br> If the file name is correct, then perhaps the probelm is with the working directory. Type getwd() in the console to find out where R is currently looking for your file. Then, use setwd() to set the new path. This path should lead to the folder where the file you are trying to import is. Finally, you can verify what the new working directory is using getwd() and try to import your file again if the new path matches the path to your file.</p>
+
+									<p>Congratulations! You have succesfully imported your first dataset. </p>
 
 									<hr class="major" />
 

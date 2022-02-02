@@ -183,7 +183,15 @@ setwd("D:/Memory_project") # Insert file path in the quotes
 df <- read_csv("data.csv") # Insert the name of the file in the quotes
 </code></pre>
 
-									<p>A few last key notes on packages:<br>Some packages are composed of multiple subpackages. Additionally, multiple packages can use the same name for different functions. As a general rule, things can go sideways when using the same name to refer to different things. Here are some tips on how to you can reduce potential package problems:</p>
+									<h3>Last remarks on...</h3>
+
+									<p><strong>Slashes in path names:</strong> R can run into errors depending on the type of slash you use (either forward or backward). This is different for Windows and Mac, which makes it even more confusing/frustrating. The error will look like this:</p>
+									<pre><code>> setwd("D:\Memory_project")
+Error: '\M' is an unrecognized escape in character string starting ""D:\M"
+</code></pre>
+									<p>When getting this type of error, try either switch the inclination of the slash (e.g., in this case, from backward \ to forward / ) or doubling the slash (e.g., using \\ instead of \).</p>
+
+									<p><strong>Loading packages:</strong><br>Some packages are composed of multiple subpackages. Additionally, multiple packages can use the same name for different functions. As a general rule, things can go sideways when using the same name to refer to different things. Here are some tips on how to you can reduce potential package problems:</p>
 
 									<ul>
 										<li>Only load at the top of your script important packages you will use throughout your script</li>
