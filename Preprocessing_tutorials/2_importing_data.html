@@ -38,6 +38,7 @@
 
 									<h2>Objectives</h2>
 									<ul>
+										<li>Learn the difference between long and wide formats</li>
 										<li>Learn how to import a data file</li>
 										<li>Learn how to import a series of data files</li>
 									</ul>
@@ -83,9 +84,9 @@ raw_df <- read_csv("data.csv") # Insert the name of the file in the quotes
 
 									<h3>Common errors</h3>
 
-									<p>At this stage, there are two common errors new R users run into. The first is [insert error message]. This can happen when you haven't loaded the tidyverse package. In the event that you have loaded the package currently and the read_csv function still doesn't work, you can try <code>read.csv()</code>. Although read_csv() is better in general, read.csv() is a good back up if all else fails.</p>
+									<p>At this stage, there are two common errors new R users run into. The first is <strong>[insert error message]</strong>. This can happen when you haven't loaded the tidyverse package. In the event that you have loaded the package currently and the read_csv function still doesn't work, you can try <code>read.csv()</code>. Although read_csv() is better in general, read.csv() is a good back up if all else fails.</p>
 
-									<p>The second common error is [insert error message]. In this error message, R is telling you that it can't find the file your asking it to import. Often, the reason it can't find the file is because it is either looking for the wrong file (i.e., there is a typo in the file name) or in the wrong place (i.e., the working directory hasn't been set up properly). <br> <br> To correct this, first make sure that the file name is correctly typed. This means the filename matches exactly the file name in the folder (letter case also matches) and that you include the correct extension (e.g., .csv). <br> <br> If the file name is correct, then perhaps the probelm is with the working directory. Type getwd() in the console to find out where R is currently looking for your file. Then, use setwd() to set the new path. This path should lead to the folder where the file you are trying to import is. Finally, you can verify what the new working directory is using getwd() and try to import your file again if the new path matches the path to your file.</p>
+									<p>The second common error is <strong>[insert error message]</strong>. In this error message, R is telling you that it can't find the file your asking it to import. Often, the reason it can't find the file is because it is either looking for the wrong file (i.e., there is a typo in the file name) or in the wrong place (i.e., the working directory hasn't been set up properly). <br> <br> To correct this, first make sure that the file name is correctly typed. This means the filename matches exactly the file name in the folder (letter case also matches) and that you include the correct extension (e.g., .csv). <br> <br> If the file name is correct, then perhaps the probelm is with the working directory. Type getwd() in the console to find out where R is currently looking for your file. Then, use setwd() to set the new path. This path should lead to the folder where the file you are trying to import is. Finally, you can verify what the new working directory is using getwd() and try to import your file again if the new path matches the path to your file.</p>
 
 									<p>Congratulations! You have succesfully imported your first dataset. </p>
 
@@ -99,13 +100,6 @@ raw_df <- read_csv("data.csv") # Insert the name of the file in the quotes
 								<!-- Sidebar -->
 					<div id="sidebar">
 						<div class="inner">
-
-							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
 
 							<!-- Menu -->
 								<nav id="menu">
