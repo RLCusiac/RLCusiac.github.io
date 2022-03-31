@@ -45,13 +45,13 @@
 
 									<p>So you've finished setting up your script and you ready to start analyzing. Thing is, you need to import your data before you can do anything with it. This tutorial will cover two of the most common file importation scenarios: 1- importing one mutlisubject data file with one subject per line (i.e., Qualtrics data), 2- importing multiple single subject data files. Although most examples will be with csv files, resources for handling other types of files (e.g., excel, e-prime) will be provided at the bottom.</p>
 
-									<h3>Long vs wide data structure</h3>
+									<h3>Long vs wide data structures</h3>
 									
 									<p>Before we start importing data, let's first take a look at two types of data structures you may encounter: wide format and long format. <br> <br> <strong>Wide format:</strong> Data is in a wide format when each participant is a row, and each observation(i.e., question or trial) is column. You will most likely encounter this format when using survey tools like Qualtrics or Google forms. In general, importing the type of data requires a single step because participants are already all in one data sheet.</p> 
 									
 									<span class="image"><img src="RA_T2/Wide_qualtrics.PNG" alt="" style="max-width: 80%;"/></span>
 
-									<p><strong>Long format:</strong> Data is in a long format when observations for each participant are distributed over multiple rows. You will most likely encounter this format when collecting behavioural data with mulitple trials per participants using software like MATLAB, E-prime, and Psychopy. In general, importing (as well as cleaning) this type of data requires a few extra steps. Typically, these steps include importing participants' individual data and then combining everything into one dataframe.</p>
+									<p><strong>Long format:</strong> Data is in a long format when observations for each participant are distributed over multiple rows. You will most likely encounter this format when collecting behavioural data with mulitple trials per participants using software like MATLAB, E-prime, and Psychopy. In general, importing (as well as cleaning) this type of data requires a few extra steps because participants' individual data must be imported and then combining into one dataframe.</p>
 
 									<span class="image"><img src="RA_T2/Long_multisubject.PNG" alt="" style="max-width: 100%;"/></span>
 
@@ -74,7 +74,7 @@ raw_df <- read_csv("data.csv") # Insert the name of the file in the quotes
 									
 									<p>Let's examine this last line more closely. Notice that there are three parts: <code>raw_df</code> + <code><-</code> + <code>read_csv("data.csv")</code>. </p>
 
-									<p>When run this line, notice that two things will happen. First, we have an output in the console.</p>
+									<p>When running this line, notice that two things will happen. First, we have an output in the console.</p>
 
 									<!-- Image of console output-->
 
@@ -89,6 +89,8 @@ raw_df <- read_csv("data.csv") # Insert the name of the file in the quotes
 									<p>The second common error is <strong>[insert error message]</strong>. In this error message, R is telling you that it can't find the file your asking it to import. Often, the reason it can't find the file is because it is either looking for the wrong file (i.e., there is a typo in the file name) or in the wrong place (i.e., the working directory hasn't been set up properly). <br> <br> To correct this, first make sure that the file name is correctly typed. This means the filename matches exactly the file name in the folder (letter case also matches) and that you include the correct extension (e.g., .csv). <br> <br> If the file name is correct, then perhaps the probelm is with the working directory. Type getwd() in the console to find out where R is currently looking for your file. Then, use setwd() to set the new path. This path should lead to the folder where the file you are trying to import is. Finally, you can verify what the new working directory is using getwd() and try to import your file again if the new path matches the path to your file.</p>
 
 									<p>Congratulations! You have succesfully imported your first dataset. </p>
+
+									<h2>Importing a series of data files</h2>
 
 									<hr class="major" />
 
