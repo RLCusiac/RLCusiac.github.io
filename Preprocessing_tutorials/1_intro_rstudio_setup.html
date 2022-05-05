@@ -177,16 +177,17 @@ c = 3</code></pre>
 library(tidyverse) # Insert package name in parentheses or quotes
 
 # Set working directory
-setwd("D:/Memory_project") # Insert file path in the quotes
+setwd("D:/Memory_data") # Insert file path in the quotes
 
 #Optional
-df <- read_csv("data.csv") # Insert the name of the file in the quotes
+df <- read_csv("Participant_01_Day1_2021-03-10.csv.csv") # Insert the name of the file in the quotes
+														 #(don't forget the extension!)
 </code></pre>
 
 									<h3>Last remarks on...</h3>
 
 									<p><strong>Slashes in path names:</strong> R can run into errors depending on the type of slash you use (either forward or backward). This is different for Windows and Mac, which makes it even more confusing/frustrating. The error will look like this:</p>
-									<pre><code>> setwd("D:\Memory_project")
+									<pre><code>> setwd("D:\Memory_data")
 Error: '\M' is an unrecognized escape in character string starting ""D:\M"
 </code></pre>
 									<p>When getting this type of error, try either switch the inclination of the slash (e.g., in this case, from backward \ to forward / ) or doubling the slash (e.g., using \\ instead of \).</p>
@@ -234,6 +235,7 @@ Error: '\M' is an unrecognized escape in character string starting ""D:\M"
 											<ul>
 												<li><a href="../Preprocessing_tutorials.html">All tutorials</a></li>
 												<li><a href="../Preprocessing_tutorials/1_intro_rstudio_setup.html">Intro to R</a></li>
+												<li><a href="../Preprocessing_tutorials/2_importing_data.html">Intro to R</a></li>
 											</ul>
 										</li>
 										<!--li><span class="opener">Statistics</span>

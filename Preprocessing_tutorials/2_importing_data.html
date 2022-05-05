@@ -22,7 +22,7 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="index.html" class="logo"><strong>Rebekka Lagacé-Cusiac</strong></a>
+									<a href="../index.html" class="logo"><strong>Rebekka Lagacé-Cusiac</strong></a>
 									<ul class="icons">
 										<li><a href="https://twitter.com/rcusiac" class="fab fa-twitter"><span class="label">Twitter</span></a></li>
 										<li><a href="https://github.com/RLCusiac" class="fab fa-github"><span class="label">GitHub</span></a></li>
@@ -66,31 +66,63 @@
 library(tidyverse) # Insert package name in parentheses or quotes
 
 # Set working directory
-setwd("D:/Memory_project") # Insert file path in the quotes
+setwd("D:/Memory_data") # Insert file path in the quotes
 
 #Import data
-raw_df <- read_csv("data.csv") # Insert the name of the file in the quotes
+raw_df <- read_csv("Participant_01_Day1_2021-03-10.csv") # Insert the name of the file in the quotes
 </code></pre>
 									
 									<p>Let's examine this last line more closely. Notice that there are three parts: <code>raw_df</code> + <code><-</code> + <code>read_csv("data.csv")</code>. </p>
 
+									<ul>
+										<li><code>raw_df</code> is the object you will be saving the data to</li>
+										<li><code><-</code> is equavalent to an "=" sign and means the result of the operation will be stored in that variable. <b> Use <code>Alt + </code> to quickly insert the <code><-</code> symbol.</b></li>
+										<li><code>read_csv("data.csv")</code> is the operation you are asking are to do (i.e., extract data from the csv file)</li>
+									</ul>
+
 									<p>When running this line, notice that two things will happen. First, we have an output in the console.</p>
 
-									<!-- Image of console output-->
+									<span class="image"><img src="RA_T2/Console_output.PNG" alt="" style="max-width: 80%;"/></span>
 
 									<p> Second, the new object name (raw_df) appeared in our global environment. </p>
 
-									<!-- Image of global enviroment + View when double clicking-->
+									<span class="image"><img src="RA_T2/New_var_global.PNG" alt="" style="max-width: 80%;"/></span>
+
+									<p> You can click on the name of the object (raw_df) to visualize the dataframe in a way that is similar to excel using rows and columns.</p>
+
+									<span class="image"><img src="RA_T2/Table_view.PNG" alt="" style="max-width: 80%;"/></span>
 
 									<h3>Common errors</h3>
 
-									<p>At this stage, there are two common errors new R users run into. The first is <strong>[insert error message]</strong>. This can happen when you haven't loaded the tidyverse package. In the event that you have loaded the package currently and the read_csv function still doesn't work, you can try <code>read.csv()</code>. Although read_csv() is better in general, read.csv() is a good back up if all else fails.</p>
+									<p>At this stage, there are two common errors new R users run into. The first is <strong>[Error in read_csv("Participant_01_Day1_2021-03-10.csv") : could not find function "read_csv"]</strong>. This can happen when you haven't loaded the tidyverse package. As a general note, the "could not find function [inser function here]" error occurs frequently and often for the same reason everytime: you are calling a function from a package that has not been loaded.<br>In the event that you have loaded the package currently and the read_csv function still doesn't work, you can try <code>read.csv()</code>. Although read_csv() is better in general, read.csv() is a good back up if all else fails.</p>
 
-									<p>The second common error is <strong>[insert error message]</strong>. In this error message, R is telling you that it can't find the file your asking it to import. Often, the reason it can't find the file is because it is either looking for the wrong file (i.e., there is a typo in the file name) or in the wrong place (i.e., the working directory hasn't been set up properly). <br> <br> To correct this, first make sure that the file name is correctly typed. This means the filename matches exactly the file name in the folder (letter case also matches) and that you include the correct extension (e.g., .csv). <br> <br> If the file name is correct, then perhaps the probelm is with the working directory. Type getwd() in the console to find out where R is currently looking for your file. Then, use setwd() to set the new path. This path should lead to the folder where the file you are trying to import is. Finally, you can verify what the new working directory is using getwd() and try to import your file again if the new path matches the path to your file.</p>
+
+
+									<p>The second common error is <strong>[Error: 'Participant_01_Day1_2021-03-10.csv' does not exist in current working directory]</strong>. In this error message, R is telling you that it can't find the file your asking it to import. Often, the reason it can't find the file is because it is either looking for the wrong file (i.e., there is a typo in the file name) or in the wrong place (i.e., the working directory hasn't been set up properly). <br> <br> To correct this, first make sure that the file name is correctly typed. This means the filename matches exactly the file name in the folder (letter case also matches) and that you include the correct extension (e.g., .csv). <br> <br> If the file name is correct, then perhaps the probelm is with the working directory. Type <code>getwd()</code> in the console to find out where R is currently looking for your file. Then, use <code>setwd()</code> to set the new path. This path should lead to the folder where the file you are trying to import is. Finally, you can verify what the new working directory is using <code>getwd()</code> and try to import your file again if the new path matches the path to your file.</p>
 
 									<p>Congratulations! You have succesfully imported your first dataset. </p>
 
 									<h2>Importing a series of data files</h2>
+
+									<p>In some cases, importing a single data file is all you need (e.g., you are analyzing a qualtrics questionnaire in which each participant is a row and each quesiton is a column). However, you might want to import <strong>multiple</strong> similar files at once. This is especially relevant for when you are doing "experimental" studies (as opposed to survey studies) in which each participant has their own file and each file has multiple rows (each representing a trial). In this case, we can <strong>automatize</strong> the importation of files using <strong>lists and for loops</strong>.</p>
+
+									<p>First, you want to make sure that all the files you want to import are in one folder and this folder only contains the files you want to import (e.g., no subfolders, figures or summarized data.</p>
+
+									<pre><code># Importing multiple files
+
+# Set working directory
+setwd("D:/Memory_data") # Folder containing all the data
+
+part_list <- list.files() # Create a list of all the items(e.g., files) in the folder
+df <- NULL # Create an empty dataframe in which we will store data from all the participants 
+
+for(part_file in part_list){
+  part_df <- read_csv(part_file) 	# Imports the participant file 
+  df <- rbind(df,part_df)		# Combines participant to the dataframe df
+}
+</code></pre>
+
+
 
 									<hr class="major" />
 
@@ -125,6 +157,7 @@ raw_df <- read_csv("data.csv") # Insert the name of the file in the quotes
 											<ul>
 												<li><a href="../Preprocessing_tutorials.html">All tutorials</a></li>
 												<li><a href="../Preprocessing_tutorials/1_intro_rstudio_setup.html">Intro to R</a></li>
+												<li><a href="../Preprocessing_tutorials/2_importing_data.html">Intro to R</a></li>
 											</ul>
 										</li>
 										<!--li><span class="opener">Statistics</span>
