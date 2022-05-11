@@ -114,11 +114,11 @@ raw_df <- read_csv("Participant_01_Day1_2021-03-10.csv") # Insert the name of th
 setwd("D:/Memory_data") # Folder containing all the data
 
 part_list <- list.files() # Create a list of all the items(e.g., files) in the folder
-df <- NULL # Create an empty dataframe in which we will store data from all the participants 
+raw_df <- NULL # Create an empty dataframe in which we will store data from all the participants 
 
 for(part_file in part_list){
   part_df <- read_csv(part_file) 	# Imports the participant file 
-  df <- rbind(df,part_df)		# Combines participant to the dataframe df
+  raw_df <- rbind(raw_df,part_df)		# Combines participant to the dataframe df
 }
 </code></pre>
 
