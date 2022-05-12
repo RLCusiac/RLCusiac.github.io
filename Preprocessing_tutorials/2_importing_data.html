@@ -98,6 +98,7 @@ raw_df <- read_csv("Participant_01_Day1_2021-03-10.csv") # Insert the name of th
 
 
 
+
 									<p>The second common error is <strong>[Error: 'Participant_01_Day1_2021-03-10.csv' does not exist in current working directory]</strong>. In this error message, R is telling you that it can't find the file your asking it to import. Often, the reason it can't find the file is because it is either looking for the wrong file (i.e., there is a typo in the file name) or in the wrong place (i.e., the working directory hasn't been set up properly). <br> <br> To correct this, first make sure that the file name is correctly typed. This means the filename matches exactly the file name in the folder (letter case also matches) and that you include the correct extension (e.g., .csv). <br> <br> If the file name is correct, then perhaps the probelm is with the working directory. Type <code>getwd()</code> in the console to find out where R is currently looking for your file. Then, use <code>setwd()</code> to set the new path. This path should lead to the folder where the file you are trying to import is. Finally, you can verify what the new working directory is using <code>getwd()</code> and try to import your file again if the new path matches the path to your file.</p>
 
 									<p>Congratulations! You have succesfully imported your first dataset. </p>
